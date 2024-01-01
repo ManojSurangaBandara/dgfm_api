@@ -31,5 +31,6 @@ Route::group(['middleware' => 'api'], function ($router) {
 
     Route::controller(MoneyAllocationController::class)->group(function () {
         Route::post('get_vote_details','get_vote_details');
+        Route::post('vote_exists','vote_exists');
     });
 });

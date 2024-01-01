@@ -16,17 +16,17 @@ use App\Http\Controllers\VoteController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\VoteController::class, 'index'])->name('vote');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
-    Route::resource('votes', VoteController::class);
+    // Route::resource('votes', VoteController::class);
 });
