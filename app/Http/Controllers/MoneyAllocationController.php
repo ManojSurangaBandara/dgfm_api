@@ -31,7 +31,7 @@ class MoneyAllocationController extends Controller
              dd($e->getMessasge());
         }
         //  $voteNumbers = array("222-01-2-1205 (i) b", "222-01-2-1205 (viii) a", "222-01-2-1301 (i)", "222-01-2-1302 (i)", "222-01-2-1302 (vii)", "222-01-2-1302 (viii)", "222-01-2-1302 (xi)", "222-01-2-1302 (xiii)", "222-01-3-2002 (iii)", "222-01-3-2003 (ii)");
-         $voteNumbers = $request['vote_numbers'];
+         $voteNumbers = $request['vote_numbers'] ?? array();
          // json encoded vote_numbers array must be passed with the api request
        
          $voteAmounts = array();
